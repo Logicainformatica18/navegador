@@ -1,24 +1,30 @@
 :root {
-  --fondo: #EEF1EC;
+  --fondo: #F3EEFF;
   --superficie: #FFFFFF;
-  --tinta: #23302B;
-  --suave: #6F7F77;
-  --acento: #E0B33A;
-  --acento-oscuro: #B88A14;
-  --peligro: #C0453A;
-  --borde: #D5DCD6;
+  --tinta: #1B1240;
+  --suave: #6A5C96;
+  --acento: #E6007A;
+  --acento-oscuro: #B8005F;
+  --secundario: #00A8E8;
+  --peligro: #F0441C;
+  --borde: #DCD2FA;
+  --sobre-acento: #FFFFFF;
+  --surco: #3B2A7A;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fondo: #19211E;
-    --superficie: #232D29;
-    --tinta: #E6ECE8;
-    --suave: #9AA8A1;
-    --acento: #E9C25A;
-    --acento-oscuro: #E9C25A;
-    --peligro: #E2685D;
-    --borde: #34413B;
+    --fondo: #120B2E;
+    --superficie: #1E1547;
+    --tinta: #F2EEFF;
+    --suave: #A99CD6;
+    --acento: #FF4FA3;
+    --acento-oscuro: #FF7AB9;
+    --secundario: #3DDCFF;
+    --peligro: #FF7A45;
+    --borde: #34296B;
+    --sobre-acento: #1B1240;
+    --surco: #4A3A96;
   }
 }
 
@@ -47,6 +53,10 @@ body {
   font-size: 2.6rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+  background: linear-gradient(90deg, var(--acento), #8B3DFF, var(--secundario));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .encabezado p {
@@ -71,7 +81,7 @@ body {
   border-radius: 50%;
   background:
     radial-gradient(circle, var(--acento) 0 14px, var(--tinta) 15px 17px, transparent 18px),
-    repeating-radial-gradient(circle, var(--tinta) 0 3px, #3A4A43 3px 5px);
+    repeating-radial-gradient(circle, var(--tinta) 0 3px, var(--surco) 3px 5px);
 }
 
 .disco.girando {
@@ -142,13 +152,13 @@ button:disabled {
 button.principal {
   background: var(--acento);
   border-color: var(--acento);
-  color: #23302B;
+  color: var(--sobre-acento);
 }
 
 button.principal:hover {
   background: var(--acento-oscuro);
   border-color: var(--acento-oscuro);
-  color: #23302B;
+  color: var(--sobre-acento);
 }
 
 button.peligro {
@@ -226,7 +236,7 @@ input {
 }
 
 .nodo:hover {
-  border-color: var(--tinta);
+  border-color: var(--secundario);
 }
 
 .nodo.activo {
@@ -257,7 +267,7 @@ input {
 
 .flecha {
   flex: 0 0 auto;
-  color: var(--suave);
+  color: var(--secundario);
   font-size: 1.2rem;
 }
 
@@ -265,7 +275,7 @@ input {
   flex: 0 0 auto;
   font-size: 0.8rem;
   color: var(--suave);
-  border: 1.5px dashed var(--borde);
+  border: 1.5px dashed var(--secundario);
   border-radius: 8px;
   padding: 0.3rem 0.5rem;
 }
