@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playlist con lista doblemente enlazada</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="encabezado">
+      <h1>Mi playlist</h1>
+      <p>Cada canción es un nodo que conoce a la anterior y a la siguiente.</p>
+    </header>
+
+    <!-- Canción que se está reproduciendo -->
+    <section class="reproductor" aria-live="polite">
+      <div class="disco" id="disco" aria-hidden="true"></div>
+      <div class="info">
+        <p class="estado" id="estado">Playlist vacía</p>
+        <h2 id="tituloActual">Agrega tu primera canción</h2>
+        <p id="artistaActual" class="artista"></p>
+        <p id="posicion" class="posicion"></p>
+      </div>
+      <div class="controles">
+        <button id="btnAnterior" title="Canción anterior">⏮ Anterior</button>
+        <button id="btnSiguiente" title="Canción siguiente">Siguiente ⏭</button>
+        <button id="btnEliminar" class="peligro">Eliminar actual</button>
+      </div>
+    </section>
+
+    <!-- Formulario para agregar canciones -->
+    <section class="agregar">
+      <h3>Agregar canción</h3>
+      <div class="campos">
+        <input type="text" id="inputTitulo" placeholder="Título" maxlength="60">
+        <input type="text" id="inputArtista" placeholder="Artista" maxlength="60">
+      </div>
+      <div class="botones-agregar">
+        <button id="btnAgregarInicio">Agregar al inicio</button>
+        <button id="btnAgregarFinal" class="principal">Agregar al final</button>
+      </div>
+      <p id="mensaje" class="mensaje" role="alert"></p>
+    </section>
+
+    <!-- Vista de la lista enlazada -->
+    <section class="lista">
+      <h3>Así se ve la lista enlazada</h3>
+      <p class="ayuda">Toca un nodo para reproducirlo.</p>
+      <div class="nodos" id="contenedorNodos"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
